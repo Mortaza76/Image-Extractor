@@ -1,0 +1,151 @@
+{
+  "extraction_timestamp": "2026-01-06T04:56:37.010799",
+  "models_used": {
+    "deepseek_ocr": {
+      "model": "deepseek-ocr:latest"
+    },
+    "qwen3_vl": {
+      "model": "qwen3-vl:8b"
+    },
+    "vision_parser": {
+      "model": "qwen3-vl:8b"
+    }
+  },
+  "extractions": {
+    "deepseek_ocr": {
+      "raw_text": "New York State  \nUSA  \nDriver's License  \n\nID 123 456 789  \nClass D  \n\nMOTORIST  \nMICHELLE, MARIE  \n2345 ANYWHERE STREET  \nALBANY, NY 12222  \n\nDCE 10/31/1990  \nIssued 03/07/2022  \nExpires 10/31/2029  \n\nE NONE  \nR NONE  \n\nSex F  Height 5'-08\"  Eyes BRO  \n\nOrgan  \nDonor",
+      "model": "deepseek-ocr",
+      "extraction_time": 21.14,
+      "character_count": 268,
+      "line_count": 23,
+      "status": "success"
+    },
+    "qwen3_vl": {
+      "raw_text": "New York State USA  \nDRIVER LICENSE  \n123 456 789  \nClass D  \nMOTORIST  \nMICHELLE, MARIE  \n2345 ANYWHERE STREET ALBANY, NY 12222  \nDOB 10/31/1990  \nissued 03/07/2022  \nExpires 10/31/2029  \nR NONE  \nR NONE  \nSex F Height 5'0\" Evs BRO  \nMichelle M. Michael  \nOCT 90  \nOrgan Donor  \nNYS",
+      "model": "qwen3-vl:8b",
+      "extraction_time": 142.01,
+      "character_count": 283,
+      "line_count": 17,
+      "status": "success"
+    }
+  },
+  "comparison": {
+    "similarity_score": 76.51,
+    "agreement_percentage": 27.78,
+    "common_lines": [
+      "MOTORIST",
+      "R NONE",
+      "MICHELLE, MARIE",
+      "Expires 10/31/2029",
+      "Class D"
+    ],
+    "unique_to_deepseek": [
+      "E NONE",
+      "USA",
+      "ALBANY, NY 12222",
+      "Organ",
+      "2345 ANYWHERE STREET",
+      "Donor",
+      "Driver's License"
+    ],
+    "unique_to_qwen": [
+      "Michelle M. Michael",
+      "DRIVER LICENSE",
+      "Organ Donor",
+      "OCT 90",
+      "NYS",
+      "2345 ANYWHERE STREET ALBANY, NY 12222"
+    ],
+    "similar_lines": [
+      {
+        "deepseek": "ID 123 456 789",
+        "qwen": "123 456 789",
+        "similarity": 0.88
+      },
+      {
+        "deepseek": "DCE 10/31/1990",
+        "qwen": "DOB 10/31/1990",
+        "similarity": 0.8571428571428571
+      },
+      {
+        "deepseek": "New York State",
+        "qwen": "New York State USA",
+        "similarity": 0.875
+      },
+      {
+        "deepseek": "Sex F  Height 5'-08\"  Eyes BRO",
+        "qwen": "Sex F Height 5'0\" Evs BRO",
+        "similarity": 0.8727272727272727
+      },
+      {
+        "deepseek": "Issued 03/07/2022",
+        "qwen": "issued 03/07/2022",
+        "similarity": 0.9411764705882353
+      }
+    ],
+    "total_lines_deepseek": 17,
+    "total_lines_qwen": 17,
+    "common_count": 5,
+    "unique_deepseek_count": 7,
+    "unique_qwen_count": 6
+  },
+  "merged_result": {
+    "raw_text": "MOTORIST\nR NONE\nMICHELLE, MARIE\nExpires 10/31/2029\nClass D\nID 123 456 789\nDOB 10/31/1990\nNew York State USA\nSex F  Height 5'-08\"  Eyes BRO\nissued 03/07/2022\nE NONE\nUSA\nALBANY, NY 12222\nOrgan\n2345 ANYWHERE STREET\nDonor\nDriver's License\nMichelle M. Michael\nDRIVER LICENSE\nOrgan Donor\nOCT 90\nNYS\n2345 ANYWHERE STREET ALBANY, NY 12222",
+    "confidence_score": 85.4,
+    "completeness_score": 135.29,
+    "source": "merged",
+    "conflicts_resolved": [
+      {
+        "deepseek": "ID 123 456 789",
+        "qwen": "123 456 789",
+        "resolved": "ID 123 456 789",
+        "reason": "deepseek-ocr (longer/more complete)"
+      },
+      {
+        "deepseek": "DCE 10/31/1990",
+        "qwen": "DOB 10/31/1990",
+        "resolved": "DOB 10/31/1990",
+        "reason": "qwen3-vl (default - better structure)"
+      },
+      {
+        "deepseek": "New York State",
+        "qwen": "New York State USA",
+        "resolved": "New York State USA",
+        "reason": "qwen3-vl (longer/more complete)"
+      },
+      {
+        "deepseek": "Sex F  Height 5'-08\"  Eyes BRO",
+        "qwen": "Sex F Height 5'0\" Evs BRO",
+        "resolved": "Sex F  Height 5'-08\"  Eyes BRO",
+        "reason": "deepseek-ocr (more complete ID)"
+      },
+      {
+        "deepseek": "Issued 03/07/2022",
+        "qwen": "issued 03/07/2022",
+        "resolved": "issued 03/07/2022",
+        "reason": "qwen3-vl (default - better structure)"
+      }
+    ]
+  },
+  "structured_data": null,
+  "parsing_metadata": {
+    "model": "qwen3-vl:8b",
+    "status": "failed",
+    "error": "Timeout",
+    "parsing_time": 902.0364425182343
+  },
+  "quality": {
+    "completeness_score": 135.29,
+    "agreement_score": 27.78,
+    "similarity_score": 76.51,
+    "confidence_score": 85.4,
+    "quality_flags": [
+      "Low agreement between models (<70%)"
+    ]
+  },
+  "metadata": {
+    "total_extraction_time": 163.15,
+    "image_size": "424x275",
+    "processing_mode": "dual_model_with_vision_parsing"
+  }
+}

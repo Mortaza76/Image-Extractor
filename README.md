@@ -76,10 +76,10 @@ pip install requests pillow
 
 ```bash
 # Using vision-enhanced parser (recommended)
-python extract_dual_model_qwen3.py "Driver License 2.png"
+python extract_dual_model_qwen3.py "driver license 3.png"
 
 # Using text-only parser (faster)
-python extract_dual_model.py "Driver License 2.png"
+python extract_dual_model.py "driver license 3.png"
 ```
 
 ### Command Line Arguments
@@ -88,7 +88,7 @@ python extract_dual_model.py "Driver License 2.png"
 python extract_dual_model_qwen3.py <image_path>
 ```
 
-If no image path is provided, it defaults to `"Driver License 2.png"`.
+If no image path is provided, it defaults to `"driver license 3.png"`.
 
 ### Output
 
@@ -101,9 +101,9 @@ The script generates:
 ### Example 1: Driver License Extraction
 
 **Input Image:**
-![Driver License 2](Driver%20License%202.png)
+![Driver License 3](driver%20license%203.png)
 
-*Note: The image above shows a sample driver license that was processed by the system.*
+*Note: The image above shows the actual driver license that was processed to generate the extraction results below.*
 
 **Extraction Results:**
 
@@ -281,7 +281,7 @@ text-extraction-pipeline/
 ├── insurance_card_extraction.json  # Insurance card results
 ├── PROJECT_REPORT.md               # Comprehensive project documentation
 ├── README.md                       # This file
-├── Driver License 2.png           # Sample driver license
+├── driver license 3.png          # Sample driver license (used in demo)
 ├── insurance card 1.png           # Sample insurance card
 └── ...                            # Additional sample images
 ```

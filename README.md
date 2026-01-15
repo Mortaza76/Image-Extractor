@@ -323,6 +323,8 @@ This project is open source and available for use.
 - **Ollama** for local LLM serving infrastructure
 
 ## 📧 Contact
-
+ Muhammad Ameer Mortaza
+ Ghulam Ishaq Khan Institute (GIKI)
  Website: Mortaza76.github.io
  Email: mortazaameer8@gmail.com
+ Github: Mortaza76

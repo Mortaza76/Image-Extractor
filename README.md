@@ -103,6 +103,8 @@ The script generates:
 **Input Image:**
 ![Driver License 2](Driver%20License%202.png)
 
+*Note: The image above shows a sample driver license that was processed by the system.*
+
 **Extraction Results:**
 
 #### DeepSeek-OCR Output:
@@ -191,6 +193,8 @@ The system intelligently combines both extractions, resolving conflicts and pres
 
 **Input Image:**
 ![Insurance Card 1](insurance%20card%201.png)
+
+*Note: The image above shows a sample insurance card that was processed by the system.*
 
 **Extraction Results:**
 

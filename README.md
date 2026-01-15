@@ -324,8 +324,5 @@ This project is open source and available for use.
 
 ## 📧 Contact
 
-For questions or issues, please open an issue on GitHub.
-
----
-
-**Built with ❤️ using state-of-the-art AI models**
+ Website: Mortaza76.github.io
+ Email: mortazaameer8@gmail.com
